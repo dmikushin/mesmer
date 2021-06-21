@@ -2,7 +2,31 @@
 
 ## Modular Earth System Model Emulator with spatially Resolved output
 
+## Building
 
+Prerequisites for Ubuntu 20.04:
+
+```
+apt install apt-file git python3 python3-venv libproj-dev proj-data proj-bin libgeos-dev libgdal-dev
+```
+
+Prerequired Python packages:
+
+```
+pip3 install -r requirements.txt
+```
+
+In case of GDAL error, note that GDAL Python bindings must correspond to the actual binary package installed in the system. The following command manages the exact correspondence:
+
+```
+pip3 install GDAL==$(gdal-config --version) --global-option=build_ext --global-option="-I/usr/include/gdal"
+```
+
+Finally, install the package itself:
+
+```
+python3 setup.py install
+```
 
 ##  Citing MESMER
 
